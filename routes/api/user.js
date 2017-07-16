@@ -41,7 +41,11 @@ router.get('/:id/collocutors', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-	const obj = req.body;
+	const obj = {
+        "id": req.body.id,
+        "name": req.body.name,
+        "email": req.body.email 
+    };
 	userService.add(obj, (err, data) => {
 		if (!err){
 			res.data = data.rows[0];

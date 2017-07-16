@@ -9,7 +9,7 @@ function findMessage(id){
 
 	let index;
 	const message = data.messages.find((el, ind) => {
-		if (el.id === id){
+		if (el.senderId === id){
 			index = ind;
 			return true;
 		} else {

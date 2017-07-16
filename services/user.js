@@ -47,8 +47,9 @@ module.exports = {
 
 	add: (user, callback) => {
 		if (typeof user.id !== 'undefined'){
+
 			data.users.push(user);
-			callback(null);
+			callback(data.users);
 		} else {
 			callback(new Error('user doesnt have id'));
 		}

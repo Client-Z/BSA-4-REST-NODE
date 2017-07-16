@@ -8,7 +8,7 @@ var elements = {
 	getCollocutorsButton: document.querySelector('#get-collocutors'),
 
 	getMessageButton: document.querySelector('#get-message'),
-	deleteMessageButton: document.querySelector('#delete-messages'),
+	deleteMessageButton: document.querySelector('#delete-message'),
 	getMessagesButton: document.querySelector('#get-messages'),
 	messageIdInput: document.querySelector('#message'),
 };
@@ -56,6 +56,17 @@ function bindListeners(){
 		var userId = Number(elements.userIdInput.value);
 		if (!isNaN(userId)){
 			deleteUser(userId, function(isSuccess){
+				if (isSuccess){
+					renderUsers
+				}
+			});
+		}
+	});
+
+	elements.deleteMessageButton.addEventListener('click', function(event){
+		var senderId = Number(elements.messageIdInput.value);
+		if (!isNaN(senderId)){
+			deleteMessage(senderId, function(isSuccess){
 				if (isSuccess){
 					renderUsers
 				}
@@ -152,6 +163,17 @@ function deleteUser(id, callback){
 	var connection = new XMLHttpRequest();
 	connection.addEventListener('load', reqListener);
 	connection.open('DELETE', '/api/user/' + id);
+	connection.send();
+
+	function reqListener(event){
+		callback(this.status === 200);		
+	}
+}
+
+function deleteMessage(id, callback){
+	var connection = new XMLHttpRequest();
+	connection.addEventListener('load', reqListener);
+	connection.open('DELETE', '/api/message/' + id);
 	connection.send();
 
 	function reqListener(event){
