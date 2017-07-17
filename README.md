@@ -27,7 +27,8 @@ Routes's description:
     1.2 Delete user : DELETE, url: '/users/:id '
 
     history.js - routing for instance of history
-    Роут который должен возвращать всех пользователей, с которыми общался пользователь с данным id. ( GET, url: '/:id/collocutors ' )
+    Роут который должен возвращать всех пользователей, с которыми общался пользователь с данным id.   
+    ( GET, url: '/:id/collocutors ' )
 
-Run application: node index.js or nodemon index.js
+Run application: node index.js or nodemon index.js   
 localhost:1428
