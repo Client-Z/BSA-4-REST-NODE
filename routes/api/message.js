@@ -29,7 +29,11 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-	const obj = req.body;
+	const obj = {
+	    "senderId": req.body.senderId,
+	    "receiverId": req.body.receiverId,
+	    "text": req.body.text 
+	};
 	messageService.add(obj, (err, data) => {
 		if (!err){
 			res.data = data.rows[0];

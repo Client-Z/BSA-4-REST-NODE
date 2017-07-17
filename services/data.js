@@ -32,4 +32,8 @@ exports.messages = [{
 	senderId: 4,
 	receiverId: 1,
 	text: 'sdlfkesdkf'
+},{
+	senderId: 1,
+	receiverId: 4,
+	text: ' (id пользователей), а также тело сообщения.'
 }];

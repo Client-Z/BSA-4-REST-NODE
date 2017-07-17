@@ -31,10 +31,10 @@ module.exports = {
 		callback(err, message);
 	},
 
-	add: (user, callback) => {
-		if (typeof user.id !== 'undefined'){
-			data.users.push(user);
-			callback(null);
+	add: (message, callback) => {
+		if (typeof message.senderId !== 'undefined'){
+			data.messages.push(message);
+			callback(message);
 		} else {
 			callback(new Error('user doesnt have id'));
 		}
