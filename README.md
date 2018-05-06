@@ -1,4 +1,4 @@
-# BSA-4-REST-NODE
+# TRY-REST-NODE
 Реализовать бекенд для чата. Создать 2 сущности - пользователи и сообщения.
 
     Каждая из сущностей реализовывает CRUD (create, read, update, delete) через REST (post, get, put, delete).
